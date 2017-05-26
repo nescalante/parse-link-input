@@ -1,4 +1,4 @@
-# parse-link-input
+# parse-link-input [![Greenkeeper badge](https://badges.greenkeeper.io/nescalante/parse-link-input.svg)](https://greenkeeper.io/)
 
 ## Install
 
