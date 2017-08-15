@@ -8,7 +8,7 @@ describe('parse-link-input', () => {
     assert.equal(result.title, null);
   });
 
-  it('parses without protocol', () => {
+  it('parses with protocol', () => {
     const result = parseLinkInput('ftp://foo');
     assert.equal(result.href, 'ftp://foo');
     assert.equal(result.title, null);
@@ -18,5 +18,11 @@ describe('parse-link-input', () => {
     const result = parseLinkInput('ftp://foo "bar"');
     assert.equal(result.href, 'ftp://foo');
     assert.equal(result.title, 'bar');
+  });
+
+  it('parses data', () => {
+    const result = parseLinkInput('data:foo;bar');
+    assert.equal(result.href, 'data:foo;bar');
+    assert.equal(result.title, undefined);
   });
 });

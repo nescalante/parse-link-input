@@ -34,6 +34,12 @@ function formatHref(url) {
 }
 
 function parseLinkInput(input) {
+  if (/data:/.test(input)) {
+    return {
+      href: input
+    }
+  }
+
   return parser.apply(null, input.match(rinput));
 
   function parser(all, link, title) {
